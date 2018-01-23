@@ -1,0 +1,8 @@
+In any programming language it is vital to learn file handling techniques. Many
+applications will at some point involve accessing folders and files on the hard drive. In
+C, a stream is associated with a file.
+A file represents a sequence of bytes on the disk where a group of related data is stored.
+File is created for permanent storage of data. It is a readymade structure. In C language,
+we use a structure pointer of file type to declare a file.
+FILE *fp;
+dgserh
