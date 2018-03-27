@@ -21,9 +21,8 @@ char *relopp(char *s)
 	char c2 = s[currIndex];
 	switch(c2)
 	{
-		case '>' :op[1] = '>'; op[2] = '\0';
-				 break;
 		case '=' :op[1] = '='; op[2] = '\0';
+		currIndex++;
 				 break;
 		default :op[1] = '\0';
 	}
@@ -47,7 +46,7 @@ char *arithopp(char *s)
 				 break;
 		default :op[1] = '\0';
 	}
-	
+
 	return op;
 }
 
@@ -98,7 +97,7 @@ char *nxt_tok(char* s, char* delm)
 
 	    	strcpy(next_token, "num");
 	    }
-	    else if(s[currIndex] == '<' || s[currIndex] == '>' || s[currIndex] == '=')
+	    else if(s[currIndex] == '<' || s[currIndex] == '>' || s[currIndex] == '=' || s[currIndex] == '!')
 	    {
 	    	i=0;
 	    	next_token = relopp(s);
@@ -127,7 +126,7 @@ char *getNextToken()
 
 	if(token == NULL)
 		return NULL;
-
+	printf("%s %d %d\n",token,len,currIndex);
 	return token; 
 }
 
